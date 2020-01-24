@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="baedc148-cf0f-4620-b57e-f9f54529b201" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61602/ForecastService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ForecastService.xsd" MetadataType="Schema" ID="447abd28-f1fc-4e03-8d5e-21aa9ac3e8ed" SourceId="1" SourceUrl="http://localhost:61602/ForecastService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ForecastService1.xsd" MetadataType="Schema" ID="3adf3945-e496-40ff-9062-ee8b2499cf76" SourceId="1" SourceUrl="http://localhost:61602/ForecastService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ForecastService2.xsd" MetadataType="Schema" ID="435ec0c6-8040-496e-ac52-baf7b9d34d53" SourceId="1" SourceUrl="http://localhost:61602/ForecastService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ForecastService.disco" MetadataType="Disco" ID="b1ac7d59-da64-4ed9-9236-1e43101aaac7" SourceId="1" SourceUrl="http://localhost:61602/ForecastService.svc?disco" />
+    <MetadataFile FileName="ForecastService.wsdl" MetadataType="Wsdl" ID="086e71fd-9e9f-45e4-bb8e-63e4c30eff97" SourceId="1" SourceUrl="http://localhost:61602/ForecastService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

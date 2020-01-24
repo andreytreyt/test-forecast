@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Forecast.Core.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Forecast.Core.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="City">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Weathers" nillable="true" type="tns:ArrayOfWeather" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="Entity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Entity" nillable="true" type="tns:Entity" />
+  <xs:complexType name="ArrayOfWeather">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Weather" nillable="true" type="tns:Weather" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWeather" nillable="true" type="tns:ArrayOfWeather" />
+  <xs:complexType name="Weather">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Temperature" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="tns:WeatherType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Weather" nillable="true" type="tns:Weather" />
+  <xs:complexType name="WeatherType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WeatherType" nillable="true" type="tns:WeatherType" />
+</xs:schema>
