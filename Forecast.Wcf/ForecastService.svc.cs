@@ -5,11 +5,13 @@ using Autofac;
 using Forecast.Core.Models;
 using Forecast.DataAccess.Interfaces;
 using Forecast.Wcf.Interfaces;
+using NLog;
 
 namespace Forecast.Wcf
 {
     public class ForecastService : IForecastService
     {
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
         private readonly IForecastRepository repository;
 
         public ForecastService()
@@ -23,14 +25,36 @@ namespace Forecast.Wcf
 
         public async Task<IEnumerable<City>> GetCities()
         {
-            var cities = await repository.GetCities();
-            return cities;
+            logger.Info("Getting cities...");
+
+            try
+            {
+                var cities = await repository.GetCities();
+                return cities;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+            }
+
+            return null;
         }
 
         public async Task<IEnumerable<Weather>> GetWeather(int cityId, DateTime date)
         {
-            var weathers = await repository.GetWeatherData(cityId, date);
-            return weathers;
+            logger.Info($"Getting wheater by cityId [{cityId}] and date [{date}]...");
+
+            try
+            {
+                var weathers = await repository.GetWeatherData(cityId, date);
+                return weathers;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+            }
+
+            return null;
         }
     }
 }
